@@ -154,3 +154,22 @@ LOGGING = {
         },
     }
 }
+
+CACHES = {
+    'S3': {
+        'BACKEND': 's3cache.AmazonS3Cache',
+        'TIMEOUT' : 60*60*24*30,
+        'OPTIONS': {
+            'MAX_ENTRIES' : 1000,
+            'ACCESS_KEY_ID': 'XXXXXXXXXXXXXXXXX',
+            'SECRET_ACCESS_KEY' : 'YYYYYYYYYYYY',
+            'STORAGE_BUCKET_NAME': 'cache-test-django',
+            'REDUCED_REDUNDANCY' : True,
+        }
+    },
+    'ElastiCache-': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '',
+        'TIMEOUT' : 60*60*24*30, # 1 month
+    },
+}
