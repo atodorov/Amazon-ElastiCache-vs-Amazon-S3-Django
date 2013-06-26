@@ -168,13 +168,13 @@ CACHES = {
         }
     },
     'ElastiCacheSmall': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache ',
         'LOCATION': '',
-        'TIMEOUT' : 60*60*24*30, # 1 month
+        'TIMEOUT' : 60*60*24*30,
     },
     'ElastiCacheLarge': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache ',
         'LOCATION': '',
-        'TIMEOUT' : 60*60*24*30, # 1 month
+        'TIMEOUT' : 60*60*24*30,
     },
 }
