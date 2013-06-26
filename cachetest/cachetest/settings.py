@@ -156,7 +156,7 @@ LOGGING = {
 }
 
 CACHES = {
-    'S3': {
+    'default': {
         'BACKEND': 's3cache.AmazonS3Cache',
         'TIMEOUT' : 60*60*24*30,
         'OPTIONS': {
