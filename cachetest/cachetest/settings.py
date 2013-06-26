@@ -167,7 +167,12 @@ CACHES = {
             'REDUCED_REDUNDANCY' : True,
         }
     },
-    'ElastiCache-': {
+    'ElastiCacheSmall': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '',
+        'TIMEOUT' : 60*60*24*30, # 1 month
+    },
+    'ElastiCacheLarge': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': '',
         'TIMEOUT' : 60*60*24*30, # 1 month
