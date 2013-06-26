@@ -161,21 +161,20 @@ CACHES = {
         'TIMEOUT' : 60*60*24*30,
         'OPTIONS': {
             'MAX_ENTRIES' : 0,
-            'ACCESS_KEY_ID': 'XXXXXXXXXXXXXXXXX',
-            'SECRET_ACCESS_KEY' : 'YYYYYYYYYYYY',
+            'ACCESS_KEY_ID': 'XXXXXXXXXXXXXXXXXXXX',
+            'SECRET_ACCESS_KEY' : 'YYYYYYYYYYYYYYY',
             'STORAGE_BUCKET_NAME': 'cache-test-django',
             'REDUCED_REDUNDANCY' : True,
         }
     },
     'ElastiCacheSmall': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '',
+        'LOCATION': 'small.cache.amazonaws.com:11211',
         'TIMEOUT' : 60*60*24*30,
     },
     'ElastiCacheLarge': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '',
+        'LOCATION': 'large.cache.amazonaws.com:11211',
         'TIMEOUT' : 60*60*24*30,
     },
 }
-
