@@ -160,7 +160,7 @@ CACHES = {
         'BACKEND': 's3cache.AmazonS3Cache',
         'TIMEOUT' : 60*60*24*30,
         'OPTIONS': {
-            'MAX_ENTRIES' : 1000,
+            'MAX_ENTRIES' : 0,
             'ACCESS_KEY_ID': 'XXXXXXXXXXXXXXXXX',
             'SECRET_ACCESS_KEY' : 'YYYYYYYYYYYY',
             'STORAGE_BUCKET_NAME': 'cache-test-django',
@@ -168,13 +168,14 @@ CACHES = {
         }
     },
     'ElastiCacheSmall': {
-        'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache ',
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': '',
         'TIMEOUT' : 60*60*24*30,
     },
     'ElastiCacheLarge': {
-        'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache ',
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': '',
         'TIMEOUT' : 60*60*24*30,
     },
 }
+
