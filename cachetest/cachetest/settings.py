@@ -167,14 +167,14 @@ CACHES = {
             'REDUCED_REDUNDANCY' : True,
         }
     },
-    'ElastiCacheSmall': {
+    'python-memcached': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': 'small.cache.amazonaws.com:11211',
+        'LOCATION': 'my.cache.amazonaws.com:11211',
         'TIMEOUT' : 60*60*24*30,
     },
-    'ElastiCacheLarge': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': 'large.cache.amazonaws.com:11211',
+    'pylibmc': {
+        'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
+        'LOCATION': 'my.cache.amazonaws.com:11211',
         'TIMEOUT' : 60*60*24*30,
     },
 }
