@@ -177,4 +177,9 @@ CACHES = {
         'LOCATION': 'my.cache.amazonaws.com:11211',
         'TIMEOUT' : 60*60*24*30,
     },
+    'pylibmc-large': {
+        'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
+        'LOCATION': 'large.cache.amazonaws.com:11211',
+        'TIMEOUT' : 60*60*24*30,
+    },
 }
